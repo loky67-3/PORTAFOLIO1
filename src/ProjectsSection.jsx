@@ -37,11 +37,10 @@ const ProjectsSection = () => {
       <h2 className="projects-header">MIS OBRAS CREATIVAS</h2>
       <div className="projects-container">
         {projects.map((project) => (
-          <div 
+          <article 
             key={project.id} 
             className="comic-showcase-item"
-            onClick={() => window.open(project.url, '_blank')}
-            style={{ cursor: 'pointer' }}
+            // Quitamos el onClick global para usar enlaces reales (mejor SEO)
           >
             {/* CINTA ADHESIVA POR TODOS LADOS (Mas cinta) */}
             <div className="tape-strip tape-top-left"></div>
@@ -50,7 +49,11 @@ const ProjectsSection = () => {
             
             {/* IMAGEN ESTILO PÓSTER */}
             <div className="poster-image-frame">
-              <img src={project.img} alt={project.title} />
+              {/* ENLACE REAL: Vital para que Google rastree el sitio de destino */}
+              <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Ver proyecto ${project.title}`}>
+                <img src={project.img} alt={`Diseño web de ${project.title}`} />
+              </a>
+              
               <div className="jagged-price-sticker">
                 <span>{project.price}</span>
               </div>
@@ -58,7 +61,12 @@ const ProjectsSection = () => {
 
             {/* INFO ESTILO NOTA PEGADA */}
             <div className={`comic-info-sheet ${project.colorClass}`}>
-              <h3>{project.title}</h3>
+              {/* Título con enlace también */}
+              <h3>
+                <a href={project.url} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: 'inherit'}}>
+                  {project.title}
+                </a>
+              </h3>
               <p>{project.desc}</p>
               <a 
                 href={`https://wa.me/523122213326?text=Hola,%20me%20interesa%20el%20proyecto%20${project.title}`} 
@@ -70,7 +78,7 @@ const ProjectsSection = () => {
                 LO QUIERO <i className="fa-solid fa-fire"></i>
               </a>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
