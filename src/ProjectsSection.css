@@ -1,0 +1,206 @@
+.projects-section {
+  padding: 120px 20px 150px;
+  background-color: transparent; /* Rojo Intenso Fondo */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.projects-header {
+  position: relative;
+  z-index: 10;
+  font-family: 'Bangers', cursive;
+  font-size: 7rem;
+  color: #fff; /* Amarillo dorado */
+  margin-bottom: 80px;
+  text-shadow: 
+    5px 5px 0px #000,
+    10px 10px 0px #ff1e00; /* Sombra doble */
+  letter-spacing: 3px;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.projects-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+}
+
+/* ITEM INDIVIDUAL (SIN CARD) */
+.comic-showcase-item {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.comic-showcase-item:hover {
+  transform: scale(1.05) rotate(-2deg);
+  z-index: 10;
+}
+
+/* === CINTA ADHESIVA (MAS CINTA MAS CINTA) === */
+.tape-strip {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5); /* Translúcido */
+  border-left: 1px dashed rgba(0,0,0,0.2);
+  border-right: 1px dashed rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 20; /* Encima de todo */
+  pointer-events: none;
+}
+
+.tape-top-left {
+  width: 100px; height: 30px;
+  top: -10px; left: -20px;
+  transform: rotate(-30deg);
+}
+
+.tape-top-right {
+  width: 80px; height: 30px;
+  top: -5px; right: -10px;
+  transform: rotate(25deg);
+}
+
+.tape-bottom-center {
+  width: 120px; height: 35px;
+  bottom: 80px; /* Pegando la imagen con el texto */
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  z-index: 25;
+}
+
+/* === MARCO DE IMAGEN PÓSTER === */
+.poster-image-frame {
+  height: 260px;
+  border: 5px solid black;
+  background: #000;
+  position: relative;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+  transform: rotate(1deg); /* Ligera rotación natural */
+  z-index: 5;
+  overflow: hidden;
+}
+
+.poster-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) saturate(1.1);
+  transition: transform 0.4s;
+}
+
+.comic-showcase-item:hover .poster-image-frame img {
+  transform: scale(1.15);
+}
+
+/* === STICKER DE PRECIO === */
+.jagged-price-sticker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fbbf24; /* Amarillo */
+  color: #000;
+  font-family: 'Bangers', cursive;
+  font-size: 1.6rem;
+  padding: 8px 15px;
+  border: 2px solid black;
+  transform: rotate(10deg);
+  box-shadow: 3px 3px 0px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+/* === NOTA DE INFORMACIÓN (BAJO LA CINTA) === */
+.comic-info-sheet {
+  padding: 30px 20px 20px;
+  margin-top: -20px; /* Subir para que conecte con la imagen */
+  background: #fff;
+  border: 4px solid black;
+  position: relative;
+  z-index: 4;
+  transform: rotate(-1deg);
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+}
+
+/* Colores de fondo para las notas */
+.card-cyan { background-color: #cffafe; }
+.card-green { background-color: #dcfce7; }
+.card-purple { background-color: #f3e8ff; }
+
+.comic-info-sheet h3 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2.2rem;
+  margin: 10px 0 10px;
+  color: #000;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.comic-info-sheet p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+/* === BOTÓN CUADRADO (BLOQUE) === */
+.square-comic-btn {
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  font-family: 'Bangers', cursive;
+  font-size: 1.6rem;
+  padding: 12px 0;
+  text-align: center;
+  border-radius: 0px; /* CUADRADO TOTAL */
+  border: 3px solid white; /* Borde interno */
+  transition: 0.1s;
+  display: block;
+  letter-spacing: 1px;
+  box-shadow: 5px 5px 0 rgba(0,0,0,0.4);
+  width: 100%;
+}
+
+/* Efecto Hover Botón */
+.square-comic-btn:hover {
+  background-color: #ff1100;
+  color: white;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.6);
+  transform: translate(-2px, -2px);
+}
+
+.square-comic-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 80px 10px 120px;
+  }
+
+  .projects-header {
+    font-size: 3.8rem;
+    margin-bottom: 60px;
+  }
+
+  .comic-showcase-item {
+    width: 95%; /* Ocupar casi toda la pantalla en móvil */
+    max-width: 360px;
+  }
+}

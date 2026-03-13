@@ -1,0 +1,717 @@
+/* IMPORTAR TIPOGRAFIA */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+/* BODY */
+
+body{
+background: #FFDA06; /* Amarillo Caricatura */
+font-family:'Luckiest Guy', cursive;
+height:100vh;
+overflow-x:hidden;
+}
+
+
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
+.navbar{
+
+width:85%;
+max-width:1100px;
+
+margin:20px auto;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:14px 30px;
+
+background: white;
+
+border-radius: 15px; /* Un poco menos redondo */
+border: 4px solid black;
+box-shadow: 10px 10px 0px black; /* Sombra dura */
+
+}
+
+
+.logo{
+font-family: 'Bangers', cursive; /* Fuente de comic */
+font-size:32px;
+color:#ff7a00;
+letter-spacing:3px;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.hamburger-menu {
+  display: none; /* Oculto en escritorio */
+  width: 50px;
+  height: 50px;
+  background-color: #ff7a00;
+  border-radius: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  border: 3px solid white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.line1.open { transform: rotate(45deg) translate(5px, 5px); }
+.line2.open { opacity: 0; }
+.line3.open { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Empieza fuera de la pantalla */
+  width: 100%;
+  height: 100%;
+  background: #ff7a00;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  transition: left 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  z-index: 1000;
+}
+
+.mobile-menu-panel.open {
+  left: 0; /* Se desliza a la vista */
+}
+
+.mobile-menu-panel a {
+  color: white;
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.mobile-menu-panel.open a {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+
+.nav-links li{
+font-family: 'Luckiest Guy', cursive;
+font-size:20px;
+color:#333;
+cursor:pointer;
+transition:0.25s;
+}
+
+
+.nav-links li:hover{
+color:#ff7a00;
+transform:scale(1.1);
+}
+
+
+.nav-btn{
+
+background: #ff7a00;
+border: 3px solid black;
+padding:9px 20px;
+border-radius: 8px;
+color:white;
+font-family: 'Bangers', cursive;
+font-size: 18px;
+cursor:pointer;
+transition:0.25s;
+box-shadow: 4px 4px 0px black;
+}
+
+
+.nav-btn:hover{
+transform:scale(1.08) translate(-2px, -2px);
+box-shadow: 6px 6px 0px black;
+}
+
+
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+.hero{
+
+height:calc(100vh - 100px);
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+}
+
+
+
+/* GRID HERO */
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:220px 220px;
+
+gap:8px;
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+
+
+/* BOTONES */
+
+.hero-btn{
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+height:110px;
+
+border-radius:22px;
+
+font-size:3.5rem;
+
+color:white;
+
+cursor:pointer;
+
+box-shadow:0 10px 20px rgba(0,0,0,0.18);
+
+transition:.25s;
+
+text-align:center;
+
+padding:8px;
+border: 4px solid black;
+
+}
+
+
+
+/* DESARROLLADOR */
+
+.hero-btn:nth-child(1){
+
+background:#ff4d4d;
+
+grid-column:1 / span 2;
+
+height:120px;
+
+font-size:3.8rem;
+
+}
+
+
+
+/* START */
+
+.hero-btn:nth-child(2){
+background:#0665ff;
+}
+
+
+
+/* DAY */
+
+.hero-btn:nth-child(3){
+background:#fd3504;
+}
+
+
+
+/* ELEPHANT */
+
+.hero-btn:nth-child(4){
+
+background:#fbff03ea;
+color:#222;
+
+grid-column:2/ span 2;
+
+height:115px;
+
+font-size:3.4rem;
+
+}
+
+
+
+/* V */
+
+.hero-btn:nth-child(5){
+
+background:#8b5cf6;
+
+grid-column:1 / span 4;
+
+height:125px;
+
+font-size:4.5rem;
+
+}
+
+
+
+/* HOVER */
+
+.hero-btn:hover{
+transform:scale(1.05) rotate(2deg);
+box-shadow:0 15px 30px rgba(0,0,0,0.25);
+z-index: 10;
+}
+
+
+
+/* TEXTO */
+
+.hero-sub{
+color:white;
+font-family: 'Permanent Marker', cursive;
+font-size:24px;
+letter-spacing:6px;
+margin-top:5px;
+text-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+}
+
+
+/*CARDS ============*/
+.cards-section{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:120px 0;
+
+}
+
+
+/* STACK */
+
+.cards-stack{
+
+position:relative;
+
+width:340px;
+height:220px;
+
+}
+
+
+/*CARDS ===================*/
+
+/*CARDS ==========*/
+/* Tipografía */
+
+
+/* ================================ */
+/* CAROUSEL SECTION (Sticky Scroll) */
+/* ================================ */
+
+.carousel-section {
+  /* Altura gigante para permitir el scroll mientras el contenido se queda fijo */
+  height: 400vh; 
+  background: #ffffff; /* Fondo blanco limpio */
+  position: relative;
+}
+
+.carousel-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Oculta lo que sale por los lados */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: red; /* Azul Cian Caricatura */
+  background-image: none; /* Quitamos la malla */
+}
+
+.carousel-header {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  z-index: 10;
+}
+
+.melted-title {
+  font-family: 'Bangers', cursive; /* Más comic */
+  font-size: 6rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: 5px 5px 0px #000;
+}
+
+.melted-subtitle {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.8rem;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+/* Pista del Carrusel */
+.carousel-track {
+  display: flex;
+  gap: 20px; /* Reducimos el espacio para que estén más juntas */
+  padding-left: 5vw; /* Empezar un poco adentro */
+  width: max-content; /* El ancho es la suma de los hijos */
+  align-items: center;
+  height: 70vh;
+  will-change: transform; /* Optimización de rendimiento */
+}
+
+/* =================== */
+/* TOON CARDS (ESTILO) */
+/* =================== */
+
+.toon-card {
+  width: 380px; /* Un poco más grandes */
+  height: 500px;
+  border-radius: 25px;
+  flex-shrink: 0; /* No encogerse */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacio entre titulo y contenido inferior */
+  text-align: center;
+  box-shadow: 12px 12px 0px black;
+  border: 5px solid black;
+  /* background: white; // Se define por cada clase de color */
+  color: white; /* Color de texto por defecto para fondos oscuros */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden; /* Para que la malla no se salga */
+  padding: 40px;
+}
+
+.toon-card:hover {
+  transform: translateY(-10px) rotate(3deg);
+  box-shadow: 15px 15px 0px black;
+}
+
+/* Colores y Patrones */
+
+.card-yellow {
+  /* Amarillo vibrante */
+  background-color: yellow;
+  color: #1f2937; /* Texto oscuro para fondo amarillo */
+}
+
+.card-green {
+  /* Verde */
+  background-color: yellowgreen;
+}
+
+.card-orange {
+  /* Anaranjado */
+  background-color: #f97316;
+}
+
+.card-purple {
+  /* Morado */
+  background-color: #9333ea;
+}
+
+.card-red {
+    /* Rojo */
+    background-color: #dc2626;
+}
+
+.card-pink {
+    /* Rosa */
+    background-color: #db2777;
+}
+
+/* Tipografía interna */
+.toon-card h3 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 4.5rem;
+  letter-spacing: 1px;
+  /* Se elimina el color para que herede el de la tarjeta */
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.toon-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  opacity: 0.9; /* Hacemos el párrafo un poco menos prominente */
+  width: 100%;
+}
+
+/* Grid de 10 iconos */
+.icon-row-10 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.icon-row-10 span {
+  font-size: 1.8rem;
+  /* Se elimina el color para que herede el de la tarjeta */
+  opacity: 1;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.icon-row-10 span:hover {
+  transform: scale(1.2);
+}
+
+/* Ajuste para la tarjeta amarilla que tiene texto oscuro */
+.card-yellow p {
+  /* No border needed */
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(5deg); }
+  50% { transform: translateY(-20px) rotate(-5deg); }
+}
+
+/* Iconos de fondo estilo caricatura */
+.card-bg-icon {
+  position: absolute;
+  z-index: 1;
+  font-size: 8rem; /* Iconos grandes */
+  opacity: 0.1; /* Muy sutiles */
+  color: inherit;
+}
+
+.bg-icon-1 {
+  top: 25%;
+  left: -15%;
+  transform: rotate(-25deg);
+}
+
+.bg-icon-2 {
+  bottom: 25%;
+  right: -15%;
+  transform: rotate(15deg);
+}
+
+/* ================================================= */
+/* ================ ESTILOS RESPONSIVOS ============ */
+/* ================================================= */
+
+@media (max-width: 768px) {
+  /* --- NAVBAR --- */
+  .navbar {
+    width: 90%;
+  }
+  .desktop-nav {
+    display: none; /* Ocultamos el menú de escritorio */
+  }
+  .hamburger-menu {
+    display: flex; /* Mostramos el menú hamburguesa */
+  }
+
+  /* --- HERO --- */
+  .hero {
+    height: auto; /* Altura automática para ajustarse al contenido */
+    min-height: 0; /* Quitar altura mínima para evitar solapamientos */
+    padding: 80px 20px; /* Añadir espacio vertical y horizontal */
+    justify-content: flex-start; /* Alinear contenido arriba para que no se centre en un espacio gigante */
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 350px;
+    gap: 15px;
+  }
+  .hero-btn {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    font-size: 2rem; /* Letra más chica */
+    border-radius: 18px;
+  }
+  .hero-btn:nth-child(1), .hero-btn:nth-child(4), .hero-btn:nth-child(5) {
+    font-size: 2.2rem; /* Unificar tamaños de letra */
+  }
+  .hero-sub {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  /* --- CAROUSEL --- */
+  .carousel-section {
+    background-color: blue;
+    height: auto; /* Dejamos que el contenido defina la altura */
+    padding: 0px;
+  }
+  .carousel-sticky {
+    position: static; /* Quitamos el efecto sticky */
+    height: auto;
+  }
+  .carousel-track {
+    flex-direction: column; /* Apilamos las tarjetas verticalmente */
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 0;
+    gap: 40px;
+  }
+  .toon-card {
+    width: 100%; /* Ancho completo */
+    height: auto;
+    min-height: 400px;
+  }
+
+  /* --- IMAGE SHOWCASE --- */
+  .image-showcase-section {
+    padding: 80px 20px; /* Añadir padding horizontal */
+  }
+  .showcase-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 40px;
+  }
+  .text-column {
+    display: flex;
+    padding: 0;
+    text-align: center;
+    width: 100%; /* Ocupar todo el ancho */
+    order: 1; /* Texto ARRIBA */
+  }
+  .left-column { order: 1; }
+  .right-column { order: 1; }
+  .text-column h2 {
+    font-size: 2.5rem; /* Texto de columna más chico */
+  }
+  .image-row {
+    width: 100%;
+    order: 2; /* Imágenes ABAJO */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .image-wrapper {
+    width: 100%;
+  }
+  .image-wrapper:nth-child(3) {
+    grid-column: 1 / -1; /* Hacemos que la 3ra imagen ocupe todo el ancho para variar */
+  }
+  .floating-title {
+    position: static; /* Título normal, no flotante */
+    transform: none;
+    order: -1; /* Ponerlo al principio de la sección */
+    color: white;
+    font-size: 3.5rem;
+    white-space: normal; /* Permitir que el texto se divida en líneas */
+    margin-bottom: 20px;
+  }
+
+  /* --- NORMAL SECTION --- */
+  .normal-section {
+    padding: 100px 20px;
+  }
+  .normal-title {
+    font-size: 4rem;
+  }
+  .normal-content-box {
+    padding: 30px;
+  }
+  .normal-cartoon-text {
+    font-size: 1.5rem;
+  }
+
+  /* --- PROJECTS --- */
+  .projects-header {
+    font-size: 3.5rem;
+  }
+  .project-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  /* --- FOOTER --- */
+  .footer-title {
+    font-size: 4rem; /* Reducido drásticamente para que quepa */
+    line-height: 1; /* Ajustar interlineado */
+    padding: 5px 20px;
+  }
+  .footer-contact-info {
+    font-size: 1.5rem;
+  }
+  .icon-box {
+    width: 50px; /* Iconos más chicos en móvil */
+    height: 50px;
+    font-size: 22px;
+  }
+  .footer-brand-bg {
+    font-size: 15rem;
+    bottom: -40px;
+  }
+}

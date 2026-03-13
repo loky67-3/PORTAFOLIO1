@@ -1,0 +1,235 @@
+/* Main Wrapper */
+.new-brush-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* === SUPER POWERS SECTION === */
+.super-powers-section {
+  padding: 140px 20px;
+  background-color: rgb(22, 247, 15); /* Morado base */
+  text-align: center;
+  position: relative;
+}
+
+.super-powers-title {
+  font-family: 'Bangers', cursive;
+  font-size: 7rem;
+  color: #fff;
+  -webkit-text-stroke: 4px black;
+  text-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+  margin-bottom: 100px;
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+}
+
+.powers-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === NOTAS PEGADAS CON CINTA === */
+.taped-item {
+  width: 340px;
+  position: relative;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.taped-item:hover {
+  transform: scale(1.1) rotate(3deg);
+  z-index: 10;
+}
+
+/* La hoja de papel */
+.paper-note {
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  border: 2px solid #eee;
+}
+
+.paper-note h3 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.paper-note p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.5;
+  background: linear-gradient(to top, #ffda06 40%, transparent 40%); /* Linea/resaltado */
+  display: inline; /* Para que el fondo solo cubra el texto */
+  padding: 2px 0;
+}
+
+/* La cinta adhesiva */
+.tape {
+  position: absolute;
+  width: 150px;
+  height: 35px;
+  background: rgba(255, 255, 150, 0.6); /* Color cinta amarillenta */
+  border-left: 1px dashed rgba(0,0,0,0.2);
+  border-right: 1px dashed rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tape-1 {
+  top: 0;
+  left: 0;
+  transform: rotate(-30deg);
+}
+
+.tape-2 {
+  top: 10px;
+  right: -10px;
+  transform: rotate(40deg);
+}
+
+.tape-3 {
+  bottom: 10px;
+  left: 50%;
+  width: 100px;
+  transform: translateX(-50%) rotate(5deg);
+}
+
+/* Rotaciones específicas para cada item */
+.design-item { transform: rotate(-3deg); }
+.code-item { transform: rotate(2deg); }
+.magic-item { transform: rotate(-1deg); }
+
+/* === ELEMENTOS DECORATIVOS DE FONDO === */
+.bg-doodle {
+    position: absolute;
+    font-family: 'Bangers', cursive;
+    font-size: 5rem;
+    color: #ffda06;
+    -webkit-text-stroke: 2px black;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.doodle-1 {
+    top: 15%;
+    left: 10%;
+    transform: rotate(-20deg);
+}
+
+.doodle-2 {
+    bottom: 10%;
+    right: 5%;
+    transform: rotate(15deg);
+    color: #00ccff;
+}
+
+.bg-tape {
+    position: absolute;
+    background: rgba(255, 255, 150, 0.4);
+    border-left: 1px dashed rgba(0,0,0,0.1);
+    border-right: 1px dashed rgba(0,0,0,0.1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.tape-long-1 {
+    width: 300px;
+    height: 40px;
+    bottom: 20%;
+    right: 5%;
+    transform: rotate(30deg);
+}
+
+.bg-character {
+    position: absolute;
+    font-size: 8rem;
+    color: rgba(0,0,0,0.1);
+    z-index: 0;
+    pointer-events: none;
+    animation: floatChar 5s ease-in-out infinite;
+}
+
+.char-1 {
+    bottom: 10%;
+    left: 5%;
+}
+
+@keyframes floatChar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+.bg-turtle-shape {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.shape-1 {
+    width: 120px;
+    height: 120px;
+    bottom: 25%;
+    left: 15%;
+    transform: rotate(15deg);
+}
+
+.bg-zigzag-line {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(3px 3px 0 black);
+}
+
+.zigzag-1 {
+    top: 25%;
+    left: 5%;
+}
+
+.char-2 {
+    bottom: 35%;
+    right: 15%;
+    font-size: 7rem;
+    transform: rotate(15deg);
+    animation-delay: 1.5s; /* different delay from ghost */
+}
+
+.char-3 {
+    top: 15%;
+    right: 10%;
+    font-size: 6rem;
+    transform: rotate(-10deg);
+    animation-delay: 0.5s;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .super-powers-section {
+    padding: 80px 10px 100px;
+  }
+  .super-powers-title {
+    font-size: 4rem;
+    margin-bottom: 60px;
+  }
+  .powers-grid {
+    gap: 60px;
+  }
+  .taped-item {
+    width: 95%; /* Ocupa casi todo el ancho */
+    transform: rotate(0) !important; /* Quitar rotación en móvil */
+  }
+
+  /* Ocultar decoraciones en móvil para no saturar */
+  .bg-doodle, .bg-tape, .bg-character, .bg-turtle-shape, .bg-zigzag-line {
+      display: none;
+  }
+}
