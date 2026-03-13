@@ -48,7 +48,7 @@ const Cards = () => {
         <div ref={trackRef} className="carousel-track">
           
           {/* CARD 1 */}
-          <article className="toon-card card-blue">
+          <article className="toon-card card-orange">
             <h3>DISEÑO<br/>UI/UX</h3>
             
             <p>
@@ -82,7 +82,7 @@ const Cards = () => {
           </article>
 
           {/* CARD 3 - ESPECIAL IMAGEN */}
-          <article className="toon-card card-purple">
+          <article className="toon-card card-cyan">
             <h3>ARTE &<br/>CÓDIGO</h3>
             
             <p>
@@ -129,6 +129,23 @@ const Cards = () => {
               <i className="fa-solid fa-face-smile"></i> <i className="fa-solid fa-sun"></i>
               <i className="fa-solid fa-moon"></i> <i className="fa-solid fa-cloud"></i>
               <i className="fa-solid fa-fire"></i> <i className="fa-solid fa-water"></i>
+            </div>
+          </article>
+
+           {/* CARD 6 - NUEVA */}
+           <article className="toon-card card-pink">
+            <h3>SEO &<br/>GROWTH</h3>
+            
+            <p>
+              Impulsamos tu marca hacia la cima. Estrategias de posicionamiento y crecimiento real para que el mundo te vea.
+            </p>
+
+            <div className="icon-row-10">
+              <i className="fa-solid fa-rocket"></i> <i className="fa-solid fa-magnifying-glass-chart"></i>
+              <i className="fa-solid fa-chart-line"></i> <i className="fa-solid fa-bullhorn"></i>
+              <i className="fa-solid fa-globe"></i> <i className="fa-solid fa-users"></i>
+              <i className="fa-solid fa-sack-dollar"></i> <i className="fa-solid fa-chart-pie"></i>
+              <i className="fa-solid fa-trophy"></i> <i className="fa-solid fa-target"></i>
             </div>
           </article>
 

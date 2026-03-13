@@ -389,7 +389,7 @@ height:220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: red; /* Azul Cian Caricatura */
+  background-color: #ef4444; /* Rojo Intenso */
   background-image: none; /* Quitamos la malla */
 }
 
@@ -455,36 +455,51 @@ height:220px;
 }
 
 /* Colores y Patrones */
+/* AQUÍ ES DONDE SE PONEN LOS COLORES DE LAS CARDS */
+
+.card-blue {
+  /* Azul Eléctrico */
+  background-color: #3b82f6; 
+  color: white;
+}
 
 .card-yellow {
-  /* Amarillo vibrante */
-  background-color: yellow;
+  /* Amarillo Minion */
+  background-color: #FFD700;
   color: #1f2937; /* Texto oscuro para fondo amarillo */
 }
 
 .card-green {
-  /* Verde */
-  background-color: yellowgreen;
+  /* Verde Slime */
+  background-color: #32ff7e;
+  color: #1f2937;
+}
+
+.card-cyan {
+  /* Turquesa Eléctrico (Para el card 3) */
+  background-color: #0fbcf9;
+  color: white;
 }
 
 .card-orange {
   /* Anaranjado */
-  background-color: #f97316;
+  background-color: #ff9f1a;
 }
 
 .card-purple {
   /* Morado */
-  background-color: #9333ea;
+  background-color: #7d5fff;
 }
 
 .card-red {
     /* Rojo */
-    background-color: #dc2626;
+    background-color: #ff3838;
 }
 
 .card-pink {
     /* Rosa */
-    background-color: #db2777;
+    background-color: #ff9ff3;
+    color: #1f2937;
 }
 
 /* Tipografía interna */
@@ -606,25 +621,42 @@ height:220px;
 
   /* --- CAROUSEL --- */
   .carousel-section {
-    background-color: blue;
-    height: auto; /* Dejamos que el contenido defina la altura */
-    padding: 0px;
+    background-color: #ef4444; /* Rojo Intenso */
+    height: 200vh; /* Reducimos más la altura para que no sobre espacio rojo al final */
+    padding: 0;
   }
   .carousel-sticky {
-    position: static; /* Quitamos el efecto sticky */
-    height: auto;
+    position: sticky; /* Activamos el efecto sticky de nuevo */
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Centramos las cards verticalmente */
+    background-color: #ef4444; /* Rojo Intenso */
   }
   .carousel-track {
-    flex-direction: column; /* Apilamos las tarjetas verticalmente */
-    width: 90%;
-    margin: 0 auto;
-    padding-left: 0;
-    gap: 40px;
+    flex-direction: row; /* Volvemos a ponerlas en fila horizontal */
+    width: max-content;
+    margin: 0;
+    padding-left: 20px; /* Un pequeño margen a la izquierda */
+    gap: 20px;
   }
   .toon-card {
-    width: 100%; /* Ancho completo */
-    height: auto;
-    min-height: 400px;
+    display: flex; /* Mostramos TODAS las cards */
+    width: 85vw; /* Que ocupen casi todo el ancho de la pantalla */
+    max-width: 340px;
+    height: 60vh; /* Altura cómoda para ver el contenido sin ocupar toda la pantalla */
+    min-height: 450px;
+    margin: 0;
+    padding: 25px;
+  }
+
+  /* Ajustamos el texto dentro de las cards para móvil */
+  .toon-card h3 {
+    font-size: 3rem;
+  }
+  .toon-card p {
+    font-size: 1rem;
   }
 
   /* --- IMAGE SHOWCASE --- */
