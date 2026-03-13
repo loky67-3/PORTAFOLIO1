@@ -56,10 +56,18 @@ box-shadow: 10px 10px 0px black; /* Sombra dura */
 
 
 .logo{
-font-family: 'Bangers', cursive; /* Fuente de comic */
-font-size:32px;
-color:#ff7a00;
-letter-spacing:3px;
+  display: block;
+  width: 65px; /* Tamaño del logo */
+  height: 65px;
+  background-image: url('https://tse3.mm.bing.net/th/id/OIP.mBWhMtoEFPtvHxcDENkFOgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent; /* Ocultamos el texto original */
+  font-size: 0;
+  border-radius: 50%; /* Lo hacemos redondo para que parezca sticker */
+  border: 2px solid black; /* Borde estilo cómic */
+  box-shadow: 2px 2px 0px black;
 }
 
 .desktop-nav {
