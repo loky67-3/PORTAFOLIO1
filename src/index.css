@@ -419,7 +419,8 @@ height:220px;
 .carousel-track {
   display: flex;
   gap: 20px; /* Reducimos el espacio para que estén más juntas */
-  padding-left: 5vw; /* Empezar un poco adentro */
+  /* Centramos la primera card: 50% pantalla - mitad de tarjeta (190px) */
+  padding-left: calc(40% - 1vw - 190px);
   width: max-content; /* El ancho es la suma de los hijos */
   align-items: center;
   height: 70vh;
@@ -523,6 +524,11 @@ height:220px;
   width: 100%;
 }
 
+/* Flecha para bajar al final del carrusel (oculta en escritorio) */
+.scroll-down-arrow {
+  display: none;
+}
+
 /* Grid de 10 iconos */
 .icon-row-10 {
   display: grid;
@@ -621,34 +627,45 @@ height:220px;
 
   /* --- CAROUSEL --- */
   .carousel-section {
+    height: 400vh; /* Altura necesaria para el efecto de scroll */
+    padding: 0; 
     background-color: #ef4444; /* Rojo Intenso */
-    height: 200vh; /* Reducimos más la altura para que no sobre espacio rojo al final */
-    padding: 0;
   }
   .carousel-sticky {
-    position: sticky; /* Activamos el efecto sticky de nuevo */
+    position: sticky; /* Activamos el efecto sticky */
     top: 0;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Ocultamos lo que sale de la pantalla */
     display: flex;
-    align-items: center; /* Centramos las cards verticalmente */
-    background-color: #ef4444; /* Rojo Intenso */
+    flex-direction: column;
+    background-color: #ef4444;
+    justify-content: center; /* Centramos verticalmente */
   }
   .carousel-track {
-    flex-direction: row; /* Volvemos a ponerlas en fila horizontal */
-    width: max-content;
-    margin: 0;
-    padding-left: 20px; /* Un pequeño margen a la izquierda */
+    /* Volvemos a la configuración para animación JS */
+    display: flex;
+    flex-direction: row;
+    width: max-content; /* IMPORTANTE: Deja que crezca a lo ancho */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 20px 7.5vw; /* Padding lateral para que la 1ra y última card se centren */
     gap: 20px;
+    /* Quitamos el bloqueo de transform para que el JS funcione */
+    transform: translateX(0); 
+    /* Ocultar barra de scroll */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+  .carousel-track::-webkit-scrollbar { display: none; }
+
   .toon-card {
-    display: flex; /* Mostramos TODAS las cards */
-    width: 85vw; /* Que ocupen casi todo el ancho de la pantalla */
-    max-width: 340px;
-    height: 60vh; /* Altura cómoda para ver el contenido sin ocupar toda la pantalla */
+    flex-shrink: 0; /* Evita que se aplasten */
+    width: 85vw; 
+    max-width: 360px;
+    height: auto;
     min-height: 450px;
     margin: 0;
-    padding: 25px;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.4); /* Sombra más ligera para móvil */
   }
 
   /* Ajustamos el texto dentro de las cards para móvil */
@@ -745,5 +762,34 @@ height:220px;
   .footer-brand-bg {
     font-size: 15rem;
     bottom: -40px;
+  }
+
+  /* Flecha para bajar al final del carrusel (solo móvil) */
+  .scroll-down-arrow {
+    display: block;
+    position: absolute;
+    bottom: 20px; /* Al final de la sección */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 45px solid white; /* La punta de la flecha */
+    filter: drop-shadow(0 4px 2px rgba(0,0,0,0.3));
+    animation: bounce-arrow 2s ease-in-out infinite;
+    z-index: 20;
+  }
+
+  @keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-25px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-10px);
+    }
   }
 }

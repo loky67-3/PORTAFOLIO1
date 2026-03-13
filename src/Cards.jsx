@@ -11,6 +11,7 @@ const Cards = () => {
       const track = trackRef.current;
 
       if (section && track) {
+        // EN ESCRITORIO: Lógica Sticky original
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
         const windowHeight = window.innerHeight;
@@ -31,6 +32,13 @@ const Cards = () => {
           // Movemos el track hacia la izquierda
           const x = -(scrollWidth * progress);
           track.style.transform = `translateX(${x}px)`;
+        } else if (scrollY < start) {
+          // Si estamos arriba, forzamos el inicio (0px)
+          track.style.transform = `translateX(0px)`;
+        } else if (scrollY > end) {
+          // Si ya pasamos la sección, forzamos el FINAL (para que no falte el último card)
+          const scrollWidth = track.scrollWidth - window.innerWidth;
+          track.style.transform = `translateX(-${scrollWidth}px)`;
         }
       }
     };
@@ -151,6 +159,9 @@ const Cards = () => {
 
         </div>
       </div>
+
+      {/* Flecha para indicar que se puede seguir bajando (solo en móvil) */}
+      <div className="scroll-down-arrow"></div>
     </section>
   );
 }
